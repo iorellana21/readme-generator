@@ -9,29 +9,50 @@ const fs = require("fs");
 inquirer.prompt([
     {
         type: 'confirm',
-        message: 'Do you want to work on your README?',
+        message: 'Do you want to create a README for your project?',
         default: true,
         name: 'begin'
 
     },
     {
         type: 'input',
-        message: 'what is your name?',
+        message: 'What is your GitHub username?',
         name: 'username'
     },
     {
+        type: 'input',
+        message: 'What is your email?',
+        name: 'email'
+    },
+    {
+        type: 'input',
+        message: 'what is the title of your project?',
+        name: 'project'
+    },
+    {
+        type: 'input',
+        message: 'Provide your project Description: ',
+        name: 'description'
+    },
+    {
+        type: 'input',
+        message: 'What Installations are needed to run this program?',
+        name: 'installation'
+    },
+    {
         type: 'list',
-        message: `hi how are you?`,
-        choices: ["Im good thanks", "Im great thanks", "thanks"],
-        name: 'feeling'
+        message: 'Which license do you want to use?',
+        choices: ["IBM", "MIT"],
+        name: 'license'
+    },
+    {
+        type: 'input',
+        message: 'Provide Contributors: ',
+        name: 'contributors'
     }
-
 ]).then(response => {
     // display user input
     console.log(response);
-    console.log(response.begin);
-    console.log(response.username);
-    console.log(response.feeling);
 
     // append data to README file using fs module
     fs.appendFile("README.md", response.username, (err) =>
