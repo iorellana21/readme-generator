@@ -56,9 +56,19 @@ inquirer.prompt([
     // display user input
     console.log(response);
 
-    // append data to README file using fs module
-    fs.appendFile("README.md", response.username, (err) =>
-        err ? console.error(err) : console.log("pushed to README")
+    // push data to README-GEN file
+    fs.appendFile(
+        // file name
+        "README-GEN.md",
+        // data
+        `# ${response.project} \n ${response.description} \n` +
+        `## Installation \n ${response.installation} \n` +
+        `## License \n ${response.license} \n` +
+        `## Contributors \n ${response.contributors} \n` +
+        `Github email: ${response.email} \n \n`,
+        // callback
+        (err) =>
+        err ? console.error(err) : console.log("Boom! Created README")
     );
 
 });
