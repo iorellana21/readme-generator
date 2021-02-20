@@ -11,8 +11,8 @@ The README Generator app is intended to be used for users to have a README file 
 * User answers prompts to gather information for README file
 * When all prompts are answers, README file is generated for user
 ---
-## Main Page
-![README-GEN Demo](link to demo "readmeGen-demo")
+## Demo
+![demo](./assets/readmeGen-demo.gif)
 
 ---
 ## Credits
