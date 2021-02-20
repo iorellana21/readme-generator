@@ -2,6 +2,8 @@
 const inquirer = require("inquirer");
 // module for files
 const fs = require("fs");
+// validate email
+var validateEmail = require("email-validator");
 
 
 
@@ -58,7 +60,6 @@ inquirer.prompt([
     fs.appendFile("README.md", response.username, (err) =>
         err ? console.error(err) : console.log("pushed to README")
     );
-
 
 });
 
